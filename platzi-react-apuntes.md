@@ -81,3 +81,31 @@ __NOTA!__ NodeJs en Windows con Bash Shell, debe ser instalado siguiendo las sig
         npm install react react-dom --save
 
 Eliminamos su '^' en la sección de versión.
+
++ En nuestro archivo index.js creamos lo siguiente:
+
+        import React from 'react'; // react nos va a servir para crear nuestros componentes
+        import ReactDOM from 'react-dom'; // react-dom nos ayuda a renderizar en el navegador
+
+        const app = document.getElementById('app')
+
+        const holaMundo = <h1>Hola mundo</h1>
+        ReactDOM.render(holaMundo, app);
+
++ Ahora a nuestro archivo _index.html_ le agregamos lo siguiente en el _body_
+
+        <div id="app"></div>
+
++ En la terminal, desde la carpeta de nuestro proyecto, volvemos a ejecutar el comando:
+
+        npm run build:prod
+
+Cambiamos el hash que nos ha creado en el index.html
+
+__NOTA!__ Hemos estado usando nuestra configuración en el modo producción (webpack.config.js), para que podamos trabajar libremente sin necesidad de hacer todo lo anterior una y otra vez, vamos a lanzar nuestro proyecto en modo desarrollo (webpack.dev.config.js), con la siguiente línea de comando:
+
+        npm run build:dev
+
+Pero ahora, es necesario hacer un cambio importante, en el _index.html_ vamos a cambiar la línea anterior de _script_ y vamos a colocar lo siguiente:
+
+        <script src="http://localhost:9000/js/platzi-video.js"></script>
