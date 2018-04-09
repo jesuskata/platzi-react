@@ -19,7 +19,7 @@ class Media extends Component { // aquí quitamos el React.Component, dejándolo
             <div className="Media">
                 <div className="Media-cover">
                     <img className="Media-image"
-                        src={media}
+                        src={image}
                         alt=""
                         width={260}
                         height={160}
