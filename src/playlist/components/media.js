@@ -4,6 +4,22 @@ import './media.css';
 
 // Es hora de crear nuestro componente, y este puede ser de tres modos: funcional, puro y de estado
 class Media extends Component { // aquí quitamos el React.Component, dejándolo solo en Component gracias a ES6
+    // esta es la forma de enlazar el evento del componente con la clase media que se renderiza en modo ES6
+
+    // constructor(props) { // este es un método que tienen todas las clases en javascript y se autoejecuta cuando media se renderee
+    //     super(props);
+    //     this.handleClick = this.handleClick.bind(this);
+    // } // esto nos sirve para enlazar el handleClick del componente a la clase media, y de esta forma usarlo
+    // handleClick(event) {
+    //     console.log(this.props.title);
+    // } // aquí se le está dando uso a lo hecho anteriormente, con el console.log podemos ver lo que definimos al dar click
+
+    // esta es la forma de enlazar el evento del componente con la clase media que se renderiza en modo ES7
+    // para ver más acerca de esto puedes entrar a https://reactjs.org/docs/handling-events.html
+    handleClick = (event) => {
+        console.log(this.props.title);
+    }
+
     render() {
 
         const { title, author, image } = this.props;
@@ -18,7 +34,7 @@ class Media extends Component { // aquí quitamos el React.Component, dejándolo
             }
         }
         return (
-            <div className="Media">
+            <div className="Media" onClick={this.handleClick}>
                 <div className="Media-cover">
                     <img className="Media-image"
                         src={image}
