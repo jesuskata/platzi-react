@@ -7,6 +7,6 @@ const app = document.getElementById('app')
 
 // ReactDOM.render(qué voy a renderizar, dónde renderizar)
 // const holaMundo = <h1>Hola Jesús Romero</h1>
-render(<Media title="¿Qué es Responsive Design?" author="JesusKata" image="./images/covers/responsive.jpg" />, app); // < > se usa para que ReactDOM reconozca nuestro componente
+render(<Media type="video" title="¿Qué es Responsive Design?" author="JesusKata" image="./images/covers/responsive.jpg" />, app); // < > se usa para que ReactDOM reconozca nuestro componente
 
 // console.log("Hola mundo!");

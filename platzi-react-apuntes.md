@@ -109,3 +109,7 @@ __NOTA!__ Hemos estado usando nuestra configuración en el modo producción (web
 Pero ahora, es necesario hacer un cambio importante, en el _index.html_ vamos a cambiar la línea anterior de _script_ y vamos a colocar lo siguiente:
 
         <script src="http://localhost:9000/js/platzi-video.js"></script>
+
++ Otra dependencia importante para instalar es la _prop-types_
+
+        npm install prop-types --save
