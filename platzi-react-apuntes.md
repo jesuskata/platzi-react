@@ -118,3 +118,18 @@ Pero ahora, es necesario hacer un cambio importante, en el _index.html_ vamos a 
 
 + Las props son inmutables, no pueden cambiar
 + Los states si tienen la capacidad de cambiar
+
+### Ciclos de vida de un componente
+
+Se divide en 3 partes: montado, actualización, desmontado y manejo de errores (a partir de ReactJS 16)
+
+#### Montado
+Tenemos varios métodos que podemos manejar al momento de crear un componente en React. Este sucede cuando vamos a renderizar un componente (cuando este entra en escena dentro de la aplicación)
+
++ constructor(): este método se llama antes de que el componente sea montado (osea, el componente aún no se ve)
+
+    + Podemos iniciar estado
+    + Enlazar bind() de eventos
+    + Es el primer método que se llama al instanciar un componente
+
+> En sí, lo único que se recomienda es poner estado inicial o hacer bind en el constructor()
