@@ -113,3 +113,8 @@ Pero ahora, es necesario hacer un cambio importante, en el _index.html_ vamos a 
 + Otra dependencia importante para instalar es la _prop-types_
 
         npm install prop-types --save
+
+### Props y States en ReactJS
+
++ Las props son inmutables, no pueden cambiar
++ Los states si tienen la capacidad de cambiar
