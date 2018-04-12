@@ -133,3 +133,64 @@ Tenemos varios métodos que podemos manejar al momento de crear un componente en
     + Es el primer método que se llama al instanciar un componente
 
 > En sí, lo único que se recomienda es poner estado inicial o hacer bind en el constructor()
+
++ componentWillMount(): método llamado inmediatamente antes de que el componente se vaya a montar (el componente aún no se ve)
+
+    + Podemos hacer un setState()
+    + No hacer llamados a un API o suscripción a eventos
+
++ render(): contiene todos los elementos a renderizar (osea, la estructura del componente)
+
+    + Contiene _jsx_ en el return
+    + Podemos calcular propiedades, por ejemplo: concatenar una cadena
+
+            nCompleto = name + lastName;
+
++ componentDidMount(): método llamado luego de montarse un componente (el componente ya está en la pantalla)
+
+    + Solo se lanza una vez
+    + Se pueden enlazar (bind) de eventos
+    + Es el primer método que se llama al instanciar un componente
+    + Ideal para llamar una API o hacer un setInterval()
+
+#### Actualización
+
+En caso que nuestro componente vaya a recibir nuevos datos
+
++ componentWillReceiveProps: este es el método que va a recibir las nuevas propiedades de mi componente
+
+    + En esta parte podemos validar las propiedades que teníamos antes con las nuevas
+    + Sirve para actualizar el estado con base en las nuevas propiedades
+
++ shouldComponentUpdate(): es importantísimo para mejorar el rendimiento de nuestra app
+
+    + Se valida si realmente es necesario re-renderear la app, haciendo una comparación de los cambios hechos
+    + Método que condiciona si el componente se debe volver a renderear
+
++ componentWillUpdate(): este componente se ejecuta si pasó el shouldComponentUpdate() con un true
+
+    + También se pasa a esta sección en caso que no se use el shouldComponentUpdate()
+    + Método utilizado antes de re-renderizar un componente
+    + Se utiliza para optimizar el rendimiento
+
++ render()
+
+    + re-render
+
++ componenteDidUpdate(): método llamado luego del re-render
+
+#### Desmontado
+
+Cómo nuestro componente se va de la escena
+
++ componenteWillUnmount(): método llamado antes de que el componente sea retirado de la aplicación
+
+    + Un ejemplo de esto es en un reproductor con el botón de play y pausa
+
+#### Manejo de errores
+
+A partir de ReactJS 16 tenemos el manejo de errores y nos ayuda a prevenir que nuestra aplicación de rompa en caso que algún componente tenga algún problema
+
++ componentDidCatch(): si ocurre algún error al renderizar el componente, este método es invocado
+
+    + El manejo de errores solo ocurre en componentes hijos
