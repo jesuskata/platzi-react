@@ -45,13 +45,14 @@ class Media extends Component { // aquí quitamos el React.Component, dejándolo
             <div className="Media" onClick={this.handleClick}>
                 <div className="Media-cover">
                     <img className="Media-image"
-                        src={ this.props.image }
+                        src={ this.props.cover } // cambiamos por cover, porque en la api.json la parte de la imagen se llama cover
                         alt=""
-                        width={260}
+                        width={240}
                         height={160}
                     />
                     <h3 className="Media-title">{ this.props.title }</h3>
-                    <p className="Media-author">{ this.state.author }</p>
+                    <p className="Media-author">{ this.props.author }</p>
+                    {/* regresamos a props el className */}
                 </div>
             </div>
         )
@@ -59,7 +60,7 @@ class Media extends Component { // aquí quitamos el React.Component, dejándolo
 }
 
 Media.propTypes = { // para saber un poco más del uso de los propTypes lee https://reactjs.org/docs/typechecking-with-proptypes.html
-    image: PropTypes.string,
+    cover: PropTypes.string, // cambiamos por cover, porque en la api.json la parte de la imagen se llama cover
     title: PropTypes.string.isRequired, // con esta opción isRequired, le decimos al programa que el título es requerido
     author: PropTypes.string,
     type: PropTypes.oneOf(['video', 'audio']) // Con esta opción, podemos declarar que el tipo de datos puede ser uno de 'tantos' tipos
