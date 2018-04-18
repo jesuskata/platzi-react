@@ -220,8 +220,38 @@ function Playlist(props) {
 }
 ```
 
-> Los componentes funcionales, al no tener ciclo de vida, son menos eficientes a la otra de controlar su reactividad y el re-renderizado.
+> Los componentes funcionales, al no tener ciclo de vida, son menos eficientes a la hora de controlar su reactividad y el re-renderizado.
 
 > Por cierto, las funciones puras … en el enfoque de la Programación Funcional son aquellas funciones que única y exclusivamente existen para retornar un valor (y no hacer otra cosa), a partir de sus parámetro de entrada …
 
 > Así que de alguna manera, los componentes funcionales, son a la vez que componentes, también funciones puras
+
+### Smart components y Dumb components
+
+La pregunta a contestar después de ver lo anterior, es "¿En qué momento uso cada tipo de componente?", para ello la respuesta más básica que lo explica es: "Cómo se ve __VS__ Qué hace"
+
++ Dumb component (Presentacional): Cómo se ve
+
+    + Puede contener smart components u otros componentes de UI
+    + Permiten composición con ```[props.children]```
+    + No depeden del resto de la aplicación
+    + No especifica cómo los datos son cargados o mutados
+    + Recibe datos y callbacks solo con propiedades
+    + Rara vez tienen su propio estado
+    + Están escritos como componentes funcionales a menos que necesiten mejoras de performance. Sólo pueden ser _Componentes funcionales_ o _Componentes Pure_
+
++ Smart component (Containers): Qué hace
+
+    + Concetrado en el funcionamiento de la aplicación (van a tener tod un ciclo de vida)
+    + Contienen componentes de UI u otros containers
+    + No tienen estilos
+    + Proveen de datos a componentes de UI u otros contenedores
+    + Proveen de callbacks a la UI
+    + Normalmente _tienen estado_
+    + Llaman acciones
+    + Generados por higher order components
+
++ ¿Por qué es importante separalos en Dumb y Smart?
+
+    + Separación de responsabilidades: Cómo se ve __VS__ Qué hace
+    + Mejora la capacidad de reutilizar componentes
