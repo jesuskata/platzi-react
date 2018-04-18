@@ -1,9 +1,9 @@
-import React, { Component } from 'react'; // gracias a ES6 podemos descomponer un objeto, trayendo el componente con {}
+import React, { PureComponent } from 'react'; // gracias a ES6 podemos descomponer un objeto, trayendo el componente con {}
 import PropTypes from 'prop-types';
 import './media.css';
 
 // Es hora de crear nuestro componente, y este puede ser de tres modos: funcional, puro y de estado
-class Media extends Component { // aquí quitamos el React.Component, dejándolo solo en Component gracias a ES6
+class Media extends PureComponent { // aquí quitamos el React.Component, dejándolo solo en Component gracias a ES6
     state = { // ES7: de este modo se hace el cambio de estado
         author: 'JesusKata'
     }

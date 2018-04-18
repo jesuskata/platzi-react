@@ -202,3 +202,26 @@ Las listas son una serie de arreglos en React, que pueden ser usadas desde una A
 + map(): es un método de javascript que nos ayuda a mapear los elementos de una lista o arreglo. En el ejemplo de nuestro proyecto, por cada elemento de _playlist_, nos devuelve un elemento de _media_
     + Dentro de map tenemos una función que contendrá un parámetro que nos indicará el elemento que deseamos presentar en todas sus versiones o elementos
 + spread operator: es un operador de propagación y permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos (llamadas a funciones) o múltiples elementos (arrays literales). Para mayor información [spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator)
+
+### Componentes puros y funcionales en ReactJS
+
+Recordemos que existen tres tipo de componentes en React (clásicos, puros y funcionales). Hemos estado usando hasta ahora los componentes clásicos de React, pero hay otras dos formas de hacer componentes:
+
++ Puros: estos componentes llevan incluido (del ciclo de vida de los componentes) el shouldComponentUpdate(). Quiere decir que si al componente no se le actualizan las propiedades, no hará re-render()
++ Funcionales: estos tienen este nombre precisamente por que son funciones. Son más fáciles de escribir, de probar y de utilizar. Además, no tiene ciclo de vida, porque no hay forma de poner los métodos de los ciclos de vida de los componentes. Un ejemplo de su forma es:
+
+```javascript
+function Playlist(props) {
+    return (
+        <div>
+            {props}
+        </div>
+    )
+}
+```
+
+> Los componentes funcionales, al no tener ciclo de vida, son menos eficientes a la otra de controlar su reactividad y el re-renderizado.
+
+> Por cierto, las funciones puras … en el enfoque de la Programación Funcional son aquellas funciones que única y exclusivamente existen para retornar un valor (y no hacer otra cosa), a partir de sus parámetro de entrada …
+
+> Así que de alguna manera, los componentes funcionales, son a la vez que componentes, también funciones puras
