@@ -9,3 +9,13 @@
     overflow-y: hidden;
     padding-bottom: 80px;
 }
+
+ul {
+    float: initial;
+}
+
+li {
+    list-style: none;
+    /* margin: 2px; */
+    float: left;
+}
