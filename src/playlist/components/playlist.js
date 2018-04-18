@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Categorias from './categorias';
 import Media from './media';
 import './playlist.css';
 
@@ -10,13 +11,18 @@ class Playlist extends Component {
       <div>
         {
           playlist.map((item) => {
-            return <div className="Playlist" key={item.id}>
-              {
-                item.playlist.map((item) => {
-                  return <Media {...item} key={item.id} />
-                })
-              }
-            </div>
+            return(
+              <div key={item.id} >
+                <Categorias {...item} />
+                <div className="Playlist">
+                  {
+                    item.playlist.map((item) => {
+                      return <Media {...item} key={item.id} />
+                    })
+                  }
+                </div>
+              </div>
+            )
           })
         }
       </div>

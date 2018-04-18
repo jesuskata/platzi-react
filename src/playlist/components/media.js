@@ -47,7 +47,7 @@ class Media extends Component { // aquí quitamos el React.Component, dejándolo
                     <img className="Media-image"
                         src={ this.props.cover } // cambiamos por cover, porque en la api.json la parte de la imagen se llama cover
                         alt=""
-                        width={240}
+                        width={260}
                         height={160}
                     />
                     <h3 className="Media-title">{ this.props.title }</h3>

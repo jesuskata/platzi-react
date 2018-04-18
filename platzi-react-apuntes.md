@@ -194,3 +194,11 @@ A partir de ReactJS 16 tenemos el manejo de errores y nos ayuda a prevenir que n
 + componentDidCatch(): si ocurre algún error al renderizar el componente, este método es invocado
 
     + El manejo de errores solo ocurre en componentes hijos
+
+### Listas en ReactJS
+
+Las listas son una serie de arreglos en React, que pueden ser usadas desde una API o una base de datos.
+
++ map(): es un método de javascript que nos ayuda a mapear los elementos de una lista o arreglo. En el ejemplo de nuestro proyecto, por cada elemento de _playlist_, nos devuelve un elemento de _media_
+    + Dentro de map tenemos una función que contendrá un parámetro que nos indicará el elemento que deseamos presentar en todas sus versiones o elementos
++ spread operator: es un operador de propagación y permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos (llamadas a funciones) o múltiples elementos (arrays literales). Para mayor información [spread operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator)
