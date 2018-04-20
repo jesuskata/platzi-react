@@ -2,10 +2,10 @@ import React from 'react';
 import Categorias from './categorias';
 import Media from './media';
 import './playlist.css';
-import Play from '../../icon/components/play';
-import Pause from '../../icon/components/pause';
-import Full from '../../icon/components/full-screen';
-import Volume from '../../icon/components/volume';
+import Play from '../../icons/components/play';
+import Pause from '../../icons/components/pause';
+import Full from '../../icons/components/full-screen';
+import Volume from '../../icons/components/volume';
 
 function Playlist(props) { // en este caso estamos usando un componente funcional porque este no necesita ciclo de vida, sólo vamos a renderizar UI
   const playlist = props.data.categories;
