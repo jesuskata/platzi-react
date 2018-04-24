@@ -1,11 +1,5 @@
-.Title {
-    font-family: 'Roboto', sans-serif;
-    color: #de3c4b;
-    margin: 5px 0 5px 0;
-}
-
-.Description {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    margin: 10px 0 5px 0;
+.Categories {
+  overflow: hidden;
+  padding: 20px 0 20px 20px;
+  background: white;
 }
