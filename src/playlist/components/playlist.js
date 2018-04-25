@@ -7,7 +7,12 @@ function Playlist(props) { // en este caso estamos usando un componente funciona
     <div className="Playlist">
       {
         props.playlist.map((item) => {
-          return <Media {...item} key={item.id} />
+          return(
+            <Media
+            handleClick={props.handleOpenModal}
+            {...item}
+            key={item.id} />
+          )
         })
       }
     </div>

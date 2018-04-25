@@ -21,12 +21,12 @@ class Media extends PureComponent { // aquí quitamos el React.Component, deján
 
     // esta es la forma de enlazar el evento del componente con la clase media que se renderiza en modo ES7
     // para ver más acerca de esto puedes entrar a https://reactjs.org/docs/handling-events.html
-    handleClick = (event) => {
-        this.setState({
-            author: 'EloisaKata'
-        }) // con este método cambiamos el estado del this por el que le digamos
-        // console.log(this.props.title);
-    }
+    // handleClick = (event) => {
+    //     this.setState({
+    //         author: 'EloisaKata'
+    //     }) // con este método cambiamos el estado del this por el que le digamos
+    //     // console.log(this.props.title);
+    // }
 
     render() {
 
@@ -42,7 +42,7 @@ class Media extends PureComponent { // aquí quitamos el React.Component, deján
             }
         }
         return (
-            <div className="Media" onClick={this.handleClick}>
+            <div className="Media" onClick={this.props.handleClick}>
                 <div className="Media-cover">
                     <img className="Media-image"
                         src={ this.props.cover } // cambiamos por cover, porque en la api.json la parte de la imagen se llama cover
