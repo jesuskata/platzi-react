@@ -5,7 +5,7 @@ import data from '../api.json';
 // como nota adicional, aquí también usamos el poder de ES6 para importar { render } y usarlo sin ReactDOM.render
 // import Playlist from './src/playlist/components/playlist';
 
-const homeContainer = document.getElementById('home-container')
+const homeContainer = document.getElementById('home-container');
 
 // ReactDOM.render(qué voy a renderizar, dónde renderizar)
 // const holaMundo = <h1>Hola Jesús Romero</h1>
