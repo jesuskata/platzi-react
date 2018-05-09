@@ -8,6 +8,7 @@ import VideoPlayerControls from '../components/video-player-controls';
 import { formattedTime } from '../../lib/utilities';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
+import Volume from '../components/volume';
 
 class VideoPlayer extends Component {
   state = {
@@ -61,11 +62,14 @@ class VideoPlayer extends Component {
       loading: false,
     })
   }
+  handleVolumeChange = (event) => {
+    this.video.volume = event.target.value;
+  }
   render() {
     return(
       <VideoPlayerLayout>
         <Title
-          title="Este es un video"
+          title={this.props.title}
         />
         <VideoPlayerControls>
           <PlayPause
@@ -81,6 +85,9 @@ class VideoPlayer extends Component {
             max={this.state.durationFloat}
             handleProgressChange={this.handleProgressChange}
           />
+          <Volume
+          handleVolumeChange={this.handleVolumeChange}
+          />
         </VideoPlayerControls>
         <Spinner
           active={this.state.loading}
@@ -93,7 +100,7 @@ class VideoPlayer extends Component {
           handleSeeking={this.handleSeeking}
           handleSeeked={this.handleSeeked}
           handleReady={this.handleReady}
-          src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+          src={this.props.src}
         />
       </VideoPlayerLayout>
     )
