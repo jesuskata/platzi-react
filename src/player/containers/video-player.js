@@ -8,7 +8,7 @@ import VideoPlayerControls from '../components/video-player-controls';
 import { formattedTime } from '../../lib/utilities';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
-import Volume from '../components/volume';
+import VolumeControl from '../components/volume';
 
 class VideoPlayer extends Component {
   state = {
@@ -18,6 +18,8 @@ class VideoPlayer extends Component {
     timeFloat: 0,
     durationFloat: 0,
     loading: false,
+    volume: 1,
+    lastValue: null,
   }
   togglePlay = (event) => {
     this.setState({
@@ -31,6 +33,7 @@ class VideoPlayer extends Component {
   }
   handleLoadedMetadata = (event) => {
     this.video = event.target;
+    this.video.volume = this.state.volume;
     this.setState({
       duration: formattedTime(this.video.duration),
       durationFloat: this.video.duration,
@@ -62,9 +65,22 @@ class VideoPlayer extends Component {
       loading: false,
     })
   }
-  handleVolumeChange = (event) => {
-    this.video.volume = event.target.value;
+  handleVolumeToggle = () => {
+    const lastValue = this.video.volume
+    this.setState ( { lastValue } )
+    if ( this.video.volume !== 0 ) {
+      this.video.volume = 0
+      this.setState ( { volume: this.video.volume } )
+    } else {
+      this.video.volume = this.state.lastValue
+      this.setState ( { volume: this.video.volume } )
+    }
   }
+
+  handleVolumeChange = event => {
+    this.video.volume = event.target.value
+    this.setState({ volume: this.video.volume })
+}
   render() {
     return(
       <VideoPlayerLayout>
@@ -85,8 +101,10 @@ class VideoPlayer extends Component {
             max={this.state.durationFloat}
             handleProgressChange={this.handleProgressChange}
           />
-          <Volume
+          <VolumeControl
           handleVolumeChange={this.handleVolumeChange}
+          handleVolumeToggle={this.handleVolumeToggle}
+          volume={this.state.volume}
           />
         </VideoPlayerControls>
         <Spinner

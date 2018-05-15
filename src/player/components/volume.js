@@ -1,14 +1,25 @@
 import React from 'react';
-import VolumeIcon from '../../icons/components/volume';
+import Volume from '../../icons/components/volume';
+import Mute from '../../icons/components/mute';
 import './volume.css';
 
-function Volume(props) {
+function VolumeControl(props) {
   return(
-    <button className="Volume">
-      <VolumeIcon
-        color="white"
-        size={25}
-      />
+    <div className="Volume">
+      <button className="Volume" onClick={props.handleVolumeToggle}>
+        {
+          props.volume ?
+            <Volume
+              color="white"
+              size={25}
+            />
+          :
+            <Mute
+              color="white"
+              size={25}
+            />
+        }
+      </button>
       <div className="Volume-range">
         <input
           type="range"
@@ -16,10 +27,11 @@ function Volume(props) {
           max={1}
           step={.05}
           onChange={props.handleVolumeChange}
+          value={props.volume}
         />
       </div>
-    </button>
+    </div>
   )
 }
 
-export default Volume;
+export default VolumeControl;

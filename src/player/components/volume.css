@@ -15,7 +15,7 @@
   transform-origin: left bottom;
   position: absolute;
   bottom: 50px;
-  left: 50px;
+  left: 65px;
   height: 50px;
   display: none;
   background: rgba(0,0,0,.7);
@@ -24,8 +24,8 @@
 }
 .Volume input {
   cursor: grab;
-  background: blue;
-  border: 1px solid blue;
+  background: transparent;
+  border: 1px solid transparent;
 }
 
 .Volume:hover .Volume-range {
