@@ -22,11 +22,11 @@
             "id": 2
           },
           {
-            "title": "Qué es Bitcoin",
-            "author": "Yograterol",
+            "title": "Pesha: Transgression",
+            "author": "The Bible Project",
             "type": "video",
-            "cover": "./images/covers/bitcoin.jpg",
-            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "cover": "./images/covers/bible-pesha.jpg",
+            "src": "https://dc1okrw7mut6n.cloudfront.net/SD/word_study/transgression.mp4",
             "id": 3
           },
           {
